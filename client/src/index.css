@@ -13,15 +13,21 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
     
-    /* Purple as primary color */
-    --primary: 265 89% 60%;
+    /* Blue to Purple gradient colors from the provided image */
+    --primary: 255 100% 30%; /* #2A1AD8 - Deep Blue */
     --primary-foreground: 0 0% 100%;
     
-    /* Darker purple shade */
-    --primary-dark: 265 89% 45%;
+    /* Medium purple shade */
+    --primary-mid: 267 78% 59%; /* #4E2xE2 */
     
-    /* Blue as secondary color */
-    --secondary: 210 100% 50%;
+    /* Vibrant purple shade */
+    --primary-bright: 269 77% 53%; /* #7231EC */
+    
+    /* Light purple shade */
+    --primary-light: 269 100% 58%; /* #953DF5 */
+    
+    /* Very light purple */
+    --secondary: 272 100% 60%; /* #B94BFF */
     --secondary-foreground: 0 0% 100%;
     
     --muted: 0 0% 97%;
@@ -65,12 +71,21 @@
     --popover: 260 15% 15%;
     --popover-foreground: 0 0% 95%;
     
-    --primary: 265 89% 60%;
+    /* Blue to Purple gradient colors from the provided image (dark mode adjusted) */
+    --primary: 255 100% 30%; /* #2A1AD8 - Deep Blue */
     --primary-foreground: 0 0% 100%;
     
-    --primary-dark: 265 89% 45%;
+    /* Medium purple shade */
+    --primary-mid: 267 78% 59%; /* #4E2xE2 */
     
-    --secondary: 210 100% 50%;
+    /* Vibrant purple shade */
+    --primary-bright: 269 77% 53%; /* #7231EC */
+    
+    /* Light purple shade */
+    --primary-light: 269 100% 58%; /* #953DF5 */
+    
+    /* Very light purple */
+    --secondary: 272 100% 60%; /* #B94BFF */
     --secondary-foreground: 0 0% 100%;
     
     --muted: 260 20% 20%;
@@ -117,20 +132,43 @@
 
 @layer utilities {
   .hero-gradient {
-    @apply bg-gradient-to-r from-primary-dark to-secondary;
+    background: linear-gradient(to right, #2A1AD8, #4E2AE2, #7231EC, #953DF5, #B94BFF);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  .hero-gradient-fixed {
+    background: linear-gradient(to right, #2A1AD8, #4E2AE2, #7231EC, #953DF5, #B94BFF);
+  }
+  
+  .hero-gradient-reversed {
+    background: linear-gradient(to left, #2A1AD8, #4E2AE2, #7231EC, #953DF5, #B94BFF);
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
   }
   
   .glossy-card {
-    @apply relative overflow-hidden rounded-xl bg-white/20 p-6 shadow-xl backdrop-blur-md;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    @apply relative overflow-hidden rounded-xl backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .glossy-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+    transform: translateY(-5px);
   }
   
   .glossy-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-white rounded-full px-6 py-3 font-semibold transition-all duration-300;
-    box-shadow: 0 4px 15px rgba(103, 65, 217, 0.3);
+    @apply relative overflow-hidden text-white rounded-full px-6 py-3 font-semibold transition-all duration-300;
+    background: linear-gradient(90deg, #2A1AD8, #7231EC, #B94BFF);
+    background-size: 200% auto;
+    animation: gradient-pulse 3s ease infinite;
+    box-shadow: 0 4px 15px rgba(42, 26, 216, 0.4);
   }
   
   .glossy-button:hover {
@@ -177,6 +215,18 @@
 
 /* Custom animations */
 @keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-pulse {
   0% {
     background-position: 0% 50%;
   }

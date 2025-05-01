@@ -92,12 +92,77 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="flex justify-center"
               >
-                <div className="glass-morphism p-2 rounded-full">
-                  <img 
-                    src="https://img.freepik.com/free-vector/cute-robot-working-laptop-cartoon-vector-icon-illustration-science-technology-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3669.jpg" 
-                    alt="IT Solutions Cartoon" 
-                    className="w-full max-w-md h-auto rounded-full"
+                <div className="relative w-full max-w-lg h-[450px] flex items-center justify-center">
+                  {/* Abstract background blobs */}
+                  <motion.div 
+                    className="absolute top-0 left-10 w-72 h-72 rounded-full opacity-70"
+                    style={{ background: 'linear-gradient(to right, #2A1AD8, #4E2AE2)' }}
+                    animate={{ 
+                      x: [0, 10, 0],
+                      y: [0, 15, 0],
+                      scale: [1, 1.05, 1] 
+                    }}
+                    transition={{ 
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 8
+                    }}
                   />
+                  <motion.div 
+                    className="absolute bottom-0 right-10 w-60 h-60 rounded-full opacity-70"
+                    style={{ background: 'linear-gradient(to right, #7231EC, #953DF5)' }}
+                    animate={{ 
+                      x: [0, -15, 0],
+                      y: [0, -10, 0],
+                      scale: [1, 1.1, 1] 
+                    }}
+                    transition={{ 
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 7
+                    }}
+                  />
+                  <motion.div 
+                    className="absolute top-1/2 right-1/2 transform translate-x-1/4 -translate-y-1/4 w-48 h-48 rounded-full opacity-70"
+                    style={{ background: 'linear-gradient(to right, #953DF5, #B94BFF)' }}
+                    animate={{ 
+                      x: [0, 20, 0],
+                      y: [0, -20, 0],
+                      scale: [1, 1.07, 1] 
+                    }}
+                    transition={{ 
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 9
+                    }}
+                  />
+                  
+                  {/* Glass card overlay */}
+                  <div className="absolute inset-0 backdrop-blur-[80px] z-10"></div>
+                  
+                  {/* Floating elements */}
+                  <div className="relative z-20 w-full h-full flex items-center justify-center">
+                    <motion.div 
+                      className="glass-morphism p-8 rounded-2xl text-center flex flex-col items-center justify-center"
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ 
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        duration: 4
+                      }}
+                    >
+                      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] mb-5 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                      </div>
+                      <h3 className="text-white text-xl font-bold mb-2">Modern IT Solutions</h3>
+                      <p className="text-white/80 mb-4">Transforming businesses through technology</p>
+                      <div className="flex space-x-2">
+                        <span className="px-3 py-1 bg-white/10 rounded-full text-white/90 text-sm">Cloud</span>
+                        <span className="px-3 py-1 bg-white/10 rounded-full text-white/90 text-sm">Security</span>
+                        <span className="px-3 py-1 bg-white/10 rounded-full text-white/90 text-sm">Data</span>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </div>

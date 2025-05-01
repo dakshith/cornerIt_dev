@@ -124,16 +124,16 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg h-full">
+              <Card className="glass-morphism p-8 text-center transition-all duration-300 hover:shadow-lg h-full">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.4, type: "spring" }}
                     >
-                      <svg className="text-primary w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="text-white w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </motion.div>
@@ -153,16 +153,16 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg h-full">
+              <Card className="glass-morphism p-8 text-center transition-all duration-300 hover:shadow-lg h-full">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-6">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
                     >
-                      <svg className="text-primary w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="text-white w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </motion.div>
@@ -213,7 +213,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-4">Our Services</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <div className="title-underline-center"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Comprehensive technology solutions designed to optimize your business operations and drive growth.
             </p>
@@ -240,7 +240,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-4">What Our Clients Say</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <div className="title-underline-center"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Don't just take our word for it. Hear from businesses that have transformed their operations with our solutions.
             </p>
@@ -262,13 +262,13 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-6">About TechCore Solutions</h2>
-              <div className="w-20 h-1 bg-primary mb-8"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-6">About Cornerstone IT Solutions</h2>
+              <div className="title-underline"></div>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2010, TechCore Solutions has been at the forefront of digital innovation, helping businesses leverage technology to achieve sustainable growth and competitive advantage.
+                Founded in December 2022, Cornerstone IT Solutions Private Limited is registered at ROC Hyderabad and specializes in comprehensive IT services, website maintenance, multimedia presentations, and custom solutions for businesses.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Our team of certified IT professionals combines technical expertise with business acumen to deliver solutions that not only solve immediate challenges but position your organization for future success.
+                We believe in building strong digital foundations for our clients, providing innovative technology solutions that drive growth and efficiency in an increasingly competitive marketplace.
               </p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
@@ -325,8 +325,8 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="absolute -bottom-6 -left-6 bg-secondary text-white p-6 rounded-lg shadow-lg"
               >
-                <div className="text-4xl font-bold mb-2">10+</div>
-                <div className="text-sm uppercase tracking-wider">Years of Excellence</div>
+                <div className="text-4xl font-bold mb-2">2022</div>
+                <div className="text-sm uppercase tracking-wider">Founded in Hyderabad</div>
               </motion.div>
             </motion.div>
           </div>
@@ -334,23 +334,25 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Ready to Transform Your Business?</h2>
-              <p className="text-white/80">Get in touch today for a free consultation.</p>
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient opacity-90 z-0"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="glossy-card bg-white/10 backdrop-blur-md">
+            <div className="flex flex-col md:flex-row items-center justify-between p-8">
+              <div className="mb-6 md:mb-0 text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Ready to Transform Your Business?</h2>
+                <p className="text-white/80">Get in touch today for a free consultation.</p>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="glossy-button"
+              >
+                <Link href="/contact">
+                  Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100 rounded-full"
-            >
-              <Link href="/contact">
-                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

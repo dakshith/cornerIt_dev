@@ -10,22 +10,70 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 hero-gradient">
+      <section className="relative pt-28 pb-20 hero-gradient overflow-hidden">
+        {/* Abstract animated background elements */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-            alt="About us background" 
-            className="w-full h-full object-cover opacity-20"
+          <motion.div 
+            className="absolute top-[-10%] right-[5%] w-[60%] h-[60%] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, #2A1AD8 0%, transparent 70%)' }}
+            animate={{ 
+              scale: [1, 1.05, 1],
+              x: [0, 10, 0],
+              y: [0, -10, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 10
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-[-20%] left-[10%] w-[70%] h-[70%] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, #7231EC 0%, transparent 70%)' }}
+            animate={{ 
+              scale: [1, 1.1, 1],
+              x: [0, -15, 0],
+              y: [0, 15, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 12
+            }}
+          />
+          <motion.div 
+            className="absolute top-[30%] left-[50%] w-[40%] h-[40%] rounded-full opacity-20"
+            style={{ background: 'radial-gradient(circle, #B94BFF 0%, transparent 60%)' }}
+            animate={{ 
+              scale: [1, 1.15, 1],
+              x: [0, 20, 0],
+              y: [0, 20, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 8
+            }}
           />
         </div>
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNCUiPjxwYXRoIGQ9Ik0zNiAxOGMxLjIyOCAwIDIuNDQuMTM0IDMuNi4zOTd2LTcuODAxQzM4LjQ0IDEwLjIgMzcuMjI4IDEwIDM2IDEwYy0xMS4wNDYgMC0yMCA4Ljk1NC0yMCAyMHM4Ljk1NCAyMCAyMCAyMGMxLjIyOCAwIDIuNDQtLjEzNCAzLjYtLjM5N3Y3LjgwMUMzOC40NCA0OS44IDM3LjIyOCA1MCAzNiA1MGMtMTEuMDQ2IDAtMjAtOC45NTQtMjAtMjBzOC45NTQtMjAgMjAtMjB6Ii8+PC9nPjwvZz48L3N2Zz4=')] 
+             opacity-50"></div>
+        
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
-            <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] mx-auto mb-6"></div>
             <p className="text-xl">
               Learn about our journey, mission, and the team driving innovation in IT solutions.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 

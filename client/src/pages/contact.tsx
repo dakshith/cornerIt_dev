@@ -70,22 +70,70 @@ export default function Contact() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-28 pb-20 hero-gradient">
+      <section className="relative pt-28 pb-20 hero-gradient overflow-hidden">
+        {/* Dynamic background elements */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-            alt="Contact background" 
-            className="w-full h-full object-cover opacity-20"
+          <motion.div 
+            className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, #2A1AD8 0%, transparent 70%)' }}
+            animate={{ 
+              scale: [1, 1.08, 1],
+              x: [0, -10, 0],
+              y: [0, 10, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 10
+            }}
+          />
+          <motion.div 
+            className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] rounded-full opacity-30"
+            style={{ background: 'radial-gradient(circle, #7231EC 0%, transparent 70%)' }}
+            animate={{ 
+              scale: [1, 1.1, 1],
+              x: [0, 15, 0],
+              y: [0, 15, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 12
+            }}
+          />
+          <motion.div 
+            className="absolute top-[30%] right-[20%] w-[40%] h-[40%] rounded-full opacity-20"
+            style={{ background: 'radial-gradient(circle, #B94BFF 0%, transparent 60%)' }}
+            animate={{ 
+              scale: [1, 1.15, 1],
+              x: [0, -20, 0],
+              y: [0, -20, 0] 
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 8
+            }}
           />
         </div>
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNCUiPjxwYXRoIGQ9Ik0zNiAxOGMxLjIyOCAwIDIuNDQuMTM0IDMuNi4zOTd2LTcuODAxQzM4LjQ0IDEwLjIgMzcuMjI4IDEwIDM2IDEwYy0xMS4wNDYgMC0yMCA4Ljk1NC0yMCAyMHM4Ljk1NCAyMCAyMCAyMGMxLjIyOCAwIDIuNDQtLjEzNCAzLjYtLjM5N3Y3LjgwMUMzOC40NCA0OS44IDM3LjIyOCA1MCAzNiA1MGMtMTEuMDQ2IDAtMjAtOC45NTQtMjAtMjBzOC45NTQtMjAgMjAtMjB6Ii8+PC9nPjwvZz48L3N2Zz4=')] 
+             opacity-50"></div>
+        
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Contact Us</h1>
-            <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] mx-auto mb-6"></div>
             <p className="text-xl">
               Reach out to us for any questions, concerns, or to discuss your IT needs.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -191,94 +239,102 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="glass-morphism p-8">
-                <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Send Us a Message</h3>
+              <div className="glass-morphism p-8 relative overflow-hidden">
+                {/* Subtle gradient orbs in background */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-gradient-to-r from-[#2A1AD8]/10 to-[#4E2AE2]/10 blur-2xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-gradient-to-r from-[#7231EC]/10 to-[#953DF5]/10 blur-2xl"></div>
                 
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="block text-gray-700 font-medium mb-2">Your Name</FormLabel>
-                          <FormControl>
-                            <Input 
-                              {...field}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                              placeholder="John Doe"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="block text-gray-700 font-medium mb-2">Your Email</FormLabel>
-                          <FormControl>
-                            <Input 
-                              {...field}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                              placeholder="john@example.com"
-                              type="email"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="block text-gray-700 font-medium mb-2">Subject</FormLabel>
-                          <FormControl>
-                            <Input 
-                              {...field}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                              placeholder="Service Inquiry"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="block text-gray-700 font-medium mb-2">Your Message</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              {...field}
-                              rows={5}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                              placeholder="Please describe how we can help you..."
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full glossy-button"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </Button>
-                  </form>
-                </Form>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] text-transparent bg-clip-text">
+                    Send Us a Message
+                  </h3>
+                  
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="block text-gray-700 font-medium mb-2">Your Name</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="John Doe"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="block text-gray-700 font-medium mb-2">Your Email</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="john@example.com"
+                                type="email"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="subject"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="block text-gray-700 font-medium mb-2">Subject</FormLabel>
+                            <FormControl>
+                              <Input 
+                                {...field}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Service Inquiry"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="block text-gray-700 font-medium mb-2">Your Message</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                {...field}
+                                rows={5}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Please describe how we can help you..."
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <Button 
+                        type="submit" 
+                        className="w-full glossy-button"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </Button>
+                    </form>
+                  </Form>
+                </div>
               </div>
             </motion.div>
           </div>

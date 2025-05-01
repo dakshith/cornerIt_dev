@@ -191,8 +191,8 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+              <div className="glass-morphism p-8">
+                <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Send Us a Message</h3>
                 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -272,7 +272,7 @@ export default function Contact() {
                     
                     <Button 
                       type="submit" 
-                      className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
+                      className="w-full glossy-button"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -298,12 +298,12 @@ export default function Contact() {
       </div>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-light">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-4">Frequently Asked Questions</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Frequently Asked Questions</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Find answers to common questions about our services and how we can help your business.
             </p>
           </div>
@@ -311,33 +311,33 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {/* FAQ Item 1 */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-3">What industries do you serve?</h3>
-                <p className="text-gray-600">
+              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">What industries do you serve?</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   We provide IT services to a wide range of industries including healthcare, finance, manufacturing, education, retail, and professional services. Our solutions are tailored to address the specific challenges and requirements of each industry.
                 </p>
               </div>
               
               {/* FAQ Item 2 */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-3">Do you offer support for remote teams?</h3>
-                <p className="text-gray-600">
+              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Do you offer support for remote teams?</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   Yes, we specialize in providing IT solutions for remote and hybrid work environments. Our services include secure remote access solutions, cloud collaboration tools, virtual desktop infrastructure, and security measures specifically designed for distributed teams.
                 </p>
               </div>
               
               {/* FAQ Item 3 */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-3">How quickly can you respond to IT emergencies?</h3>
-                <p className="text-gray-600">
+              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">How quickly can you respond to IT emergencies?</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   Our emergency response time depends on your service level agreement (SLA), but we typically respond to critical issues within 1 hour or less. We offer 24/7 support options for businesses that require around-the-clock monitoring and assistance.
                 </p>
               </div>
               
               {/* FAQ Item 4 */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-3">What is the typical process for starting a new project?</h3>
-                <p className="text-gray-600">
+              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">What is the typical process for starting a new project?</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   We begin with an initial consultation to understand your business needs and objectives. Then, we conduct a detailed assessment of your current systems and requirements. Based on this analysis, we develop a proposal with recommendations, timeline, and pricing. Once approved, we move forward with implementation, followed by thorough testing and ongoing support.
                 </p>
               </div>
@@ -347,26 +347,29 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Ready to Get Started?</h2>
-              <p className="text-white/80">Schedule a free consultation with our team today.</p>
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 hero-gradient opacity-90 z-0"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="glossy-card bg-white/10 backdrop-blur-md">
+            <div className="flex flex-col md:flex-row items-center justify-between p-8">
+              <div className="mb-6 md:mb-0 text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Ready to Get Started?</h2>
+                <p className="text-white/80">Schedule a free consultation with our team today.</p>
+              </div>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="glossy-button"
+                onClick={() => {
+                  const element = document.querySelector('form');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Request a Quote
+              </Button>
             </div>
-            <Button
-              variant="secondary"
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100 rounded-full"
-              onClick={() => {
-                const element = document.querySelector('form');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Request a Quote
-            </Button>
           </div>
         </div>
       </section>

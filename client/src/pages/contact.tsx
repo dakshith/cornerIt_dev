@@ -354,12 +354,20 @@ export default function Contact() {
       </div>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Subtle background elements */}
+        <div className="absolute inset-0 z-0 opacity-5">
+          <div className="absolute top-0 right-0 w-2/3 h-2/3 rounded-full" 
+              style={{ background: 'radial-gradient(circle, #2A1AD8 0%, transparent 70%)' }}></div>
+          <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-full" 
+              style={{ background: 'radial-gradient(circle, #B94BFF 0%, transparent 70%)' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Frequently Asked Questions</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] text-transparent bg-clip-text">Frequently Asked Questions</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Find answers to common questions about our services and how we can help your business.
             </p>
           </div>
@@ -367,36 +375,76 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {/* FAQ Item 1 */}
-              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">What industries do you serve?</h3>
-                <p className="text-gray-600 dark:text-gray-300">
+              <motion.div 
+                className="glass-morphism p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                {/* Subtle gradient accent */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-10" 
+                     style={{ background: 'radial-gradient(circle, #2A1AD8 0%, transparent 70%)' }}></div>
+                
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text relative z-10">What industries do you serve?</h3>
+                <p className="text-gray-600 relative z-10">
                   We provide IT services to a wide range of industries including healthcare, finance, manufacturing, education, retail, and professional services. Our solutions are tailored to address the specific challenges and requirements of each industry.
                 </p>
-              </div>
+              </motion.div>
               
               {/* FAQ Item 2 */}
-              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Do you offer support for remote teams?</h3>
-                <p className="text-gray-600 dark:text-gray-300">
+              <motion.div 
+                className="glass-morphism p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {/* Subtle gradient accent */}
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full opacity-10" 
+                     style={{ background: 'radial-gradient(circle, #7231EC 0%, transparent 70%)' }}></div>
+                
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-[#4E2AE2] to-[#953DF5] text-transparent bg-clip-text relative z-10">Do you offer support for remote teams?</h3>
+                <p className="text-gray-600 relative z-10">
                   Yes, we specialize in providing IT solutions for remote and hybrid work environments. Our services include secure remote access solutions, cloud collaboration tools, virtual desktop infrastructure, and security measures specifically designed for distributed teams.
                 </p>
-              </div>
+              </motion.div>
               
               {/* FAQ Item 3 */}
-              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">How quickly can you respond to IT emergencies?</h3>
-                <p className="text-gray-600 dark:text-gray-300">
+              <motion.div 
+                className="glass-morphism p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {/* Subtle gradient accent */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-10" 
+                     style={{ background: 'radial-gradient(circle, #953DF5 0%, transparent 70%)' }}></div>
+                
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-[#7231EC] to-[#B94BFF] text-transparent bg-clip-text relative z-10">How quickly can you respond to IT emergencies?</h3>
+                <p className="text-gray-600 relative z-10">
                   Our emergency response time depends on your service level agreement (SLA), but we typically respond to critical issues within 1 hour or less. We offer 24/7 support options for businesses that require around-the-clock monitoring and assistance.
                 </p>
-              </div>
+              </motion.div>
               
               {/* FAQ Item 4 */}
-              <div className="glass-morphism p-6 hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">What is the typical process for starting a new project?</h3>
-                <p className="text-gray-600 dark:text-gray-300">
+              <motion.div 
+                className="glass-morphism p-6 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                {/* Subtle gradient accent */}
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full opacity-10" 
+                     style={{ background: 'radial-gradient(circle, #B94BFF 0%, transparent 70%)' }}></div>
+                
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-[#953DF5] to-[#B94BFF] text-transparent bg-clip-text relative z-10">What is the typical process for starting a new project?</h3>
+                <p className="text-gray-600 relative z-10">
                   We begin with an initial consultation to understand your business needs and objectives. Then, we conduct a detailed assessment of your current systems and requirements. Based on this analysis, we develop a proposal with recommendations, timeline, and pricing. Once approved, we move forward with implementation, followed by thorough testing and ongoing support.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -404,29 +452,71 @@ export default function Contact() {
 
       {/* CTA Section */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 hero-gradient opacity-90 z-0"></div>
+        {/* Dynamic gradient background */}
+        <div className="absolute inset-0 hero-gradient-fixed opacity-90 z-0"></div>
+        
+        {/* Animated floating elements */}
+        <motion.div 
+          className="absolute top-[10%] left-[5%] w-32 h-32 rounded-full bg-white/5 backdrop-blur-md z-0"
+          animate={{ 
+            y: [0, -15, 0],
+            x: [0, 10, 0],
+            scale: [1, 1.05, 1] 
+          }}
+          transition={{ 
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 8
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-[10%] right-[5%] w-24 h-24 rounded-full bg-white/5 backdrop-blur-md z-0"
+          animate={{ 
+            y: [0, 15, 0],
+            x: [0, -10, 0],
+            scale: [1, 1.08, 1] 
+          }}
+          transition={{ 
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 7
+          }}
+        />
+        
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="glossy-card bg-white/10 backdrop-blur-md">
+          <motion.div 
+            className="glossy-card bg-white/10 backdrop-blur-md border border-white/20 rounded-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex flex-col md:flex-row items-center justify-between p-8">
               <div className="mb-6 md:mb-0 text-center md:text-left">
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Ready to Get Started?</h2>
                 <p className="text-white/80">Schedule a free consultation with our team today.</p>
               </div>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="glossy-button"
-                onClick={() => {
-                  const element = document.querySelector('form');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Request a Quote
-              </Button>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="glossy-button"
+                  onClick={() => {
+                    const element = document.querySelector('form');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Request a Quote
+                </Button>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

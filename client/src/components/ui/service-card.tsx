@@ -63,32 +63,65 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       className="service-card"
     >
       <Card className="glass-morphism overflow-hidden h-full border border-white/20 backdrop-blur-sm">
-        <div className={`h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center overflow-hidden relative`}>
+        <div className={`h-48 bg-gradient-to-r from-[#2A1AD8] via-[#7231EC] to-[#B94BFF] flex items-center justify-center overflow-hidden relative`}>
+          {/* Animated background elements */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30"
+            className="absolute w-56 h-56 rounded-full bg-white/5 backdrop-blur-sm top-[-50%] left-[-20%]"
             animate={{
-              backgroundPosition: ['0% 0%', '100% 100%'],
+              y: [0, 20, 0],
+              x: [0, 10, 0],
+              scale: [1, 1.1, 1],
             }}
             transition={{
-              duration: 10,
+              duration: 8,
               repeat: Infinity,
               repeatType: 'reverse',
             }}
           />
           <motion.div 
+            className="absolute w-40 h-40 rounded-full bg-white/5 backdrop-blur-sm bottom-[-30%] right-[-10%]"
+            animate={{
+              y: [0, -15, 0],
+              x: [0, -10, 0],
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          />
+          
+          {/* Icon container */}
+          <motion.div 
             className="relative z-10 p-5 rounded-full bg-white/10 backdrop-blur-sm border border-white/30"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300 }}
+            style={{ 
+              boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2)'
+            }}
           >
             {iconMap[icon] || <Server className="text-white text-5xl" />}
           </motion.div>
         </div>
-        <CardContent className="p-6">
-          <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">{title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
-          <Link href={`/services/${id}`} className="glossy-button inline-flex items-center justify-center text-sm">
-            Learn More <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <CardContent className="p-6 relative">
+          {/* Subtle background accent */}
+          <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full opacity-5" 
+               style={{ background: 'radial-gradient(circle, #7231EC 0%, transparent 70%)' }}></div>
+               
+          <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] text-transparent bg-clip-text relative z-10">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-5 relative z-10">{description}</p>
+          
+          <div className="relative z-10">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link href={`/services/${id}`} className="glossy-button inline-flex items-center justify-center text-sm">
+                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </motion.div>
+          </div>
         </CardContent>
       </Card>
     </motion.div>

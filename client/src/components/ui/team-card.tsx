@@ -24,14 +24,14 @@ export const TeamCard: FC<TeamCardProps> = ({ member, delay = 0 }) => {
       <Card className="glass-morphism overflow-hidden border border-white/20">
         <div className="relative">
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 z-10 opacity-40"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2A1AD8]/30 to-[#B94BFF]/30 z-10 opacity-40"></div>
             <img 
               src={member.image}
               alt={member.name} 
               className="w-full h-64 object-cover"
             />
           </div>
-          <div className="social-icons absolute inset-0 bg-gradient-to-r from-primary/70 to-secondary/70 flex items-center justify-center gap-4 opacity-0 transition-opacity duration-300 backdrop-blur-sm z-20">
+          <div className="social-icons absolute inset-0 bg-gradient-to-r from-[#2A1AD8]/70 via-[#7231EC]/70 to-[#B94BFF]/70 flex items-center justify-center gap-4 opacity-0 transition-opacity duration-300 backdrop-blur-sm z-20">
             {member.socialLinks.linkedin && (
               <motion.a 
                 href={member.socialLinks.linkedin} 
@@ -68,12 +68,16 @@ export const TeamCard: FC<TeamCardProps> = ({ member, delay = 0 }) => {
             )}
           </div>
         </div>
-        <div className="p-6 text-center">
-          <h3 className="text-xl font-bold mb-1 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">{member.name}</h3>
-          <div className="inline-block bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 rounded-full mb-3">
-            <p className="text-gray-800 dark:text-gray-200 font-medium">{member.role}</p>
+        <div className="p-6 text-center relative">
+          {/* Subtle background accent */}
+          <div className="absolute -top-10 right-0 w-20 h-20 rounded-full opacity-5" 
+               style={{ background: 'radial-gradient(circle, #B94BFF 0%, transparent 70%)' }}></div>
+               
+          <h3 className="text-xl font-bold mb-1 bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] text-transparent bg-clip-text relative z-10">{member.name}</h3>
+          <div className="inline-block bg-gradient-to-r from-[#2A1AD8]/10 via-[#7231EC]/10 to-[#B94BFF]/10 px-3 py-1 rounded-full mb-3 relative z-10">
+            <p className="font-medium bg-gradient-to-r from-[#4E2AE2] to-[#953DF5] text-transparent bg-clip-text">{member.role}</p>
           </div>
-          <p className="text-gray-600 dark:text-gray-300">{member.description}</p>
+          <p className="text-gray-600 dark:text-gray-300 relative z-10">{member.description}</p>
         </div>
       </Card>
       

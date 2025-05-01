@@ -57,14 +57,16 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       transition={{ duration: 0.5, delay }}
       className="service-card"
     >
-      <Card className="bg-white rounded-lg shadow-md overflow-hidden h-full">
-        <div className={`h-48 ${color} flex items-center justify-center`}>
-          {iconMap[icon] || <Server className="text-white text-5xl" />}
+      <Card className="glass-morphism overflow-hidden h-full">
+        <div className={`h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center`}>
+          <div className="relative p-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/30">
+            {iconMap[icon] || <Server className="text-white text-5xl" />}
+          </div>
         </div>
         <CardContent className="p-6">
           <h3 className="text-xl font-bold mb-3">{title}</h3>
           <p className="text-gray-600 mb-4">{description}</p>
-          <Link href={`/services/${id}`} className="text-primary hover:text-primary-dark font-medium inline-flex items-center">
+          <Link href={`/services/${id}`} className="glossy-button inline-flex items-center justify-center text-sm">
             Learn More <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </CardContent>

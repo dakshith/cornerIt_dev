@@ -26,7 +26,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section id="home" className="relative pt-24 lg:pt-0">
-        <div className="hero-gradient h-screen flex items-center">
+        <div className="hero-gradient min-h-screen flex items-center">
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
@@ -35,55 +35,70 @@ export default function Home() {
             />
           </div>
           <div className="container mx-auto px-4 md:px-6 relative z-10">
-            <div className="max-w-3xl mx-auto text-center text-white">
-              <div className="animated-text mb-8">
-                <motion.span
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="text-white lg:text-left text-center">
+                <div className="animated-text mb-8">
+                  <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 block"
+                  >
+                    Cornerstone IT Solutions
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="text-xl md:text-2xl lg:text-3xl font-light mb-6 block"
+                  >
+                    Building Your Digital Foundation
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="text-lg md:text-xl block"
+                  >
+                    Comprehensive IT solutions for businesses of all sizes
+                  </motion.span>
+                </div>
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 block"
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                  className="flex flex-col sm:flex-row lg:justify-start justify-center gap-4 mt-8"
                 >
-                  Innovative IT Solutions
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-xl md:text-2xl lg:text-3xl font-light mb-6 block"
-                >
-                  Driving Business Transformation
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1 }}
-                  className="text-lg md:text-xl block"
-                >
-                  Tailored technology solutions for your growing enterprise
-                </motion.span>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="glossy-button"
+                  >
+                    <Link href="#services">Our Services</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 rounded-full"
+                  >
+                    <Link href="/contact">Get Started</Link>
+                  </Button>
+                </motion.div>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.5 }}
-                className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="flex justify-center"
               >
-                <Button
-                  asChild
-                  variant="secondary"
-                  size="lg"
-                  className="bg-white text-primary hover:bg-gray-100 rounded-full"
-                >
-                  <Link href="#services">Our Services</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="default"
-                  size="lg"
-                  className="bg-secondary hover:bg-orange-600 text-white rounded-full"
-                >
-                  <Link href="/contact">Get Started</Link>
-                </Button>
+                <div className="glass-morphism p-2 rounded-full">
+                  <img 
+                    src="https://img.freepik.com/free-vector/cute-robot-working-laptop-cartoon-vector-icon-illustration-science-technology-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3669.jpg" 
+                    alt="IT Solutions Cartoon" 
+                    className="w-full max-w-md h-auto rounded-full"
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -95,9 +110,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-4">Who We Are</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <div className="title-underline-center"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              TechCore Solutions is a leading IT consultancy helping businesses navigate digital transformation with cutting-edge solutions tailored to their unique challenges.
+              Cornerstone IT Solutions is a leading IT services company helping businesses navigate digital transformation with cutting-edge solutions tailored to their unique challenges.
             </p>
           </div>
 

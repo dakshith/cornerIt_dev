@@ -145,18 +145,20 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const companyInformation = {
-  name: "TechCore Solutions",
-  founded: 2010,
-  slogan: "Driving Business Transformation",
+  name: "Cornerstone IT Solutions",
+  founded: 2022,
+  slogan: "Building Your Digital Foundation",
+  description: "Cornerstone IT Solutions Private Limited is a private company incorporated on 07 December 2022. We specialize in a range of computer-related activities including website maintenance, multimedia presentations creation, and comprehensive IT solutions for businesses of all sizes.",
+  registrationInfo: "Registered at Registrar of Companies, ROC Hyderabad with an authorized share capital of Rs. 100,000 and paid up capital of Rs. 100,000.",
   address: {
-    street: "1234 Tech Avenue, Suite 500",
-    city: "San Francisco",
-    state: "CA",
-    zip: "94107"
+    street: "Hyderabad Corporate Office",
+    city: "Hyderabad",
+    state: "Telangana",
+    zip: "500001"
   },
   contact: {
-    phone: "(123) 456-7890",
-    email: "info@techcoresolutions.com"
+    phone: "+91 40 1234 5678",
+    email: "info@cornerstoneitsolutions.com"
   },
   social: {
     linkedin: "#",

@@ -132,9 +132,11 @@ export function TestimonialCarousel({
           <button
             key={index}
             className={`w-3 h-3 rounded-full mx-1 ${
-              index === current ? "bg-primary" : "bg-gray-300"
-            }`}
-            onClick={() => setCurrent(index)}
+              index === current 
+                ? "bg-gradient-to-r from-primary to-secondary" 
+                : "bg-gray-300 hover:bg-gray-400"
+            } transition-all duration-300`}
+            onClick={() => scrollToSlide(index)}
           />
         ))}
       </div>

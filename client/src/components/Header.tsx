@@ -49,16 +49,24 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-md py-2' : 'py-4'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'backdrop-blur-md bg-white/80 dark:bg-slate-900/80 shadow-lg py-2' 
+          : 'bg-white/5 backdrop-blur-sm py-4'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className={`w-full h-full transition-opacity duration-300 ${isScrolled ? 'opacity-20' : 'opacity-0'}`}>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2A1AD8] via-[#7231EC] to-[#B94BFF]"></div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-primary-dark text-3xl font-bold font-heading">TechCore</span>
-            <span className="text-secondary text-2xl font-bold font-heading">Solutions</span>
+          <Link href="/" className="flex items-center space-x-1">
+            <span className="bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text text-3xl font-bold font-heading">Cornerstone</span>
+            <span className="bg-gradient-to-r from-[#7231EC] to-[#B94BFF] text-transparent bg-clip-text text-2xl font-bold font-heading">IT</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,21 +75,23 @@ export default function Header() {
               href="/" 
               className={`${
                 isActive('/') 
-                  ? 'text-primary font-medium' 
-                  : 'text-gray-800 hover:text-primary font-medium'
-              } transition-colors duration-300`}
+                  ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' 
+                  : 'text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium'
+              } transition-colors duration-300 relative group`}
             >
               Home
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] transition-all duration-300 group-hover:w-full ${isActive('/') ? 'w-full' : ''}`}></span>
             </Link>
             <Link 
               href="/about" 
               className={`${
                 isActive('/about') 
-                  ? 'text-primary font-medium' 
-                  : 'text-gray-800 hover:text-primary font-medium'
-              } transition-colors duration-300`}
+                  ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' 
+                  : 'text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium'
+              } transition-colors duration-300 relative group`}
             >
               About Us
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] transition-all duration-300 group-hover:w-full ${isActive('/about') ? 'w-full' : ''}`}></span>
             </Link>
             
             {/* Services Dropdown */}
@@ -90,19 +100,20 @@ export default function Header() {
                 <button 
                   className={`${
                     isActive('/services') 
-                      ? 'text-primary font-medium' 
-                      : 'text-gray-800 hover:text-primary font-medium'
-                  } transition-colors duration-300 flex items-center`}
+                      ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' 
+                      : 'text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium'
+                  } transition-colors duration-300 flex items-center relative group`}
                 >
                   Services <ChevronDown className="ml-1 h-4 w-4" />
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] transition-all duration-300 group-hover:w-full ${isActive('/services') ? 'w-full' : ''}`}></span>
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-56">
+              <DropdownMenuContent align="center" className="w-56 bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-xl p-1 dark:bg-slate-900/90 dark:border-slate-800">
                 {services.map((service) => (
                   <DropdownMenuItem key={service.id} asChild>
                     <Link 
                       href={`/services/${service.id}`}
-                      className="w-full px-4 py-2 hover:bg-gray-50 hover:text-primary cursor-pointer"
+                      className="w-full rounded-lg px-4 py-2 hover:bg-gray-50/80 dark:hover:bg-slate-800/80 hover:text-[#7231EC] cursor-pointer"
                     >
                       {service.title}
                     </Link>
@@ -115,17 +126,18 @@ export default function Header() {
               href="/contact" 
               className={`${
                 isActive('/contact') 
-                  ? 'text-primary font-medium' 
-                  : 'text-gray-800 hover:text-primary font-medium'
-              } transition-colors duration-300`}
+                  ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' 
+                  : 'text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium'
+              } transition-colors duration-300 relative group`}
             >
               Contact
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] transition-all duration-300 group-hover:w-full ${isActive('/contact') ? 'w-full' : ''}`}></span>
             </Link>
             
             <Button 
               asChild
               variant="default" 
-              className="bg-primary hover:bg-primary-dark text-white rounded-full"
+              className="bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] hover:opacity-90 text-white rounded-full transition-all duration-300 shadow-md hover:shadow-xl border border-white/20"
             >
               <Link href="/contact">Get a Quote</Link>
             </Button>
@@ -143,17 +155,18 @@ export default function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="p-0">
-              <SheetHeader className="p-6 border-b">
+            <SheetContent side="right" className="p-0 bg-white/95 backdrop-blur-lg dark:bg-slate-900/95">
+              <SheetHeader className="p-6 border-b border-gray-100 dark:border-slate-800">
                 <SheetTitle className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <span className="text-primary-dark text-2xl font-bold font-heading">TechCore</span>
-                    <span className="text-secondary text-xl font-bold font-heading">Solutions</span>
+                  <div className="flex items-center space-x-1">
+                    <span className="bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text text-2xl font-bold font-heading">Cornerstone</span>
+                    <span className="bg-gradient-to-r from-[#7231EC] to-[#B94BFF] text-transparent bg-clip-text text-xl font-bold font-heading">IT</span>
                   </div>
                   <Button 
                     variant="ghost" 
                     size="icon" 
                     onClick={() => setIsMobileMenuOpen(false)}
+                    className="hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full"
                   >
                     <X className="h-5 w-5" />
                     <span className="sr-only">Close</span>
@@ -161,11 +174,11 @@ export default function Header() {
                 </SheetTitle>
               </SheetHeader>
               
-              <div className="flex flex-col px-6 py-4 space-y-4">
+              <div className="flex flex-col px-6 py-6 space-y-5">
                 <Link 
                   href="/" 
-                  className={`text-gray-800 hover:text-primary font-medium py-2 ${
-                    isActive('/') ? 'text-primary' : ''
+                  className={`text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium py-2 border-b border-gray-100 dark:border-slate-800 ${
+                    isActive('/') ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' : ''
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -173,8 +186,8 @@ export default function Header() {
                 </Link>
                 <Link 
                   href="/about" 
-                  className={`text-gray-800 hover:text-primary font-medium py-2 ${
-                    isActive('/about') ? 'text-primary' : ''
+                  className={`text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium py-2 border-b border-gray-100 dark:border-slate-800 ${
+                    isActive('/about') ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' : ''
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -182,18 +195,20 @@ export default function Header() {
                 </Link>
                 
                 <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="services" className="border-0">
+                  <AccordionItem value="services" className="border-b border-gray-100 dark:border-slate-800">
                     <AccordionTrigger className={`text-left py-2 ${
-                      isActive('/services') ? 'text-primary' : 'text-gray-800'
-                    } hover:text-primary font-medium hover:no-underline`}>
+                      isActive('/services') 
+                        ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' 
+                        : 'text-gray-800 dark:text-gray-200 hover:text-[#7231EC]'
+                    } font-medium hover:no-underline`}>
                       Services
                     </AccordionTrigger>
-                    <AccordionContent className="pl-4 mt-2 border-l-2 border-gray-200">
+                    <AccordionContent className="pl-4 mt-2 border-l-2 border-[#7231EC]/20">
                       {services.map((service) => (
                         <Link
                           key={service.id}
                           href={`/services/${service.id}`}
-                          className="block py-2 text-gray-700 hover:text-primary"
+                          className="block py-2.5 text-gray-700 dark:text-gray-300 hover:text-[#7231EC]"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {service.title}
@@ -205,8 +220,8 @@ export default function Header() {
                 
                 <Link 
                   href="/contact" 
-                  className={`text-gray-800 hover:text-primary font-medium py-2 ${
-                    isActive('/contact') ? 'text-primary' : ''
+                  className={`text-gray-800 dark:text-gray-200 hover:text-[#7231EC] font-medium py-2 border-b border-gray-100 dark:border-slate-800 ${
+                    isActive('/contact') ? 'bg-gradient-to-r from-[#2A1AD8] to-[#7231EC] text-transparent bg-clip-text font-semibold' : ''
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -215,7 +230,7 @@ export default function Header() {
                 
                 <Button 
                   asChild
-                  className="w-full bg-primary hover:bg-primary-dark text-white rounded-full mt-4"
+                  className="w-full bg-gradient-to-r from-[#2A1AD8] to-[#B94BFF] hover:opacity-90 text-white rounded-full mt-4 border border-white/20 shadow-md transition-all duration-300"
                 >
                   <Link 
                     href="/contact"

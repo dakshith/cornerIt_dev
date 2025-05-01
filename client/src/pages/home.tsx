@@ -27,6 +27,15 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative pt-24 lg:pt-0">
         <div className="hero-gradient min-h-screen flex items-center overflow-hidden relative">
+          {/* Background image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+              alt="Technology background" 
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+          
           {/* Dynamic background elements */}
           <div className="absolute inset-0 z-0">
             <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full opacity-20" 
@@ -39,7 +48,7 @@ export default function Home() {
           
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNDUiPjxwYXRoIGQ9Ik0zNiAxOGMxLjIyOCAwIDIuNDQuMTM0IDMuNi4zOTd2LTcuODAxQzM4LjQ0IDEwLjIgMzcuMjI4IDEwIDM2IDEwYy0xMS4wNDYgMC0yMCA4Ljk1NC0yMCAyMHM4Ljk1NCAyMCAyMCAyMGMxLjIyOCAwIDIuNDQtLjEzNCAzLjYtLjM5N3Y3LjgwMUMzOC40NCA0OS44IDM3LjIyOCA1MCAzNiA1MGMtMTEuMDQ2IDAtMjAtOC45NTQtMjAtMjBzOC45NTQtMjAgMjAtMjB6Ii8+PC9nPjwvZz48L3N2Zz4=')] 
-               opacity-80"></div>
+               opacity-40"></div>
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="text-white lg:text-left text-center">

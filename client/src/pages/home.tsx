@@ -182,16 +182,16 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Card className="bg-white p-8 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg h-full">
+              <Card className="glass-morphism p-8 text-center transition-all duration-300 hover:shadow-lg h-full">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-dark via-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.8, type: "spring" }}
                     >
-                      <svg className="text-primary w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="text-white w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -273,26 +273,26 @@ export default function Home() {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <Check className="text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mr-4">
+                    <Check className="text-white" />
                   </div>
                   <span className="font-medium">Enterprise Solutions</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <Check className="text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mr-4">
+                    <Check className="text-white" />
                   </div>
                   <span className="font-medium">Cloud Expertise</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <Check className="text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-dark to-primary rounded-full flex items-center justify-center mr-4">
+                    <Check className="text-white" />
                   </div>
                   <span className="font-medium">24/7 Support</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                    <Check className="text-primary" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-primary-dark rounded-full flex items-center justify-center mr-4">
+                    <Check className="text-white" />
                   </div>
                   <span className="font-medium">Security Focus</span>
                 </div>
@@ -300,7 +300,7 @@ export default function Home() {
               
               <Button
                 asChild
-                className="bg-primary hover:bg-primary-dark text-white rounded-full"
+                className="glossy-button"
               >
                 <Link href="/contact">Let's Work Together</Link>
               </Button>
@@ -313,17 +313,19 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Team meeting" 
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
-              />
+              <div className="glass-morphism p-3 rounded-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  alt="Team meeting" 
+                  className="rounded-lg w-full h-auto object-cover"
+                />
+              </div>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="absolute -bottom-6 -left-6 bg-secondary text-white p-6 rounded-lg shadow-lg"
+                className="absolute -bottom-6 -left-6 bg-gradient-to-r from-primary to-secondary text-white p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl font-bold mb-2">2022</div>
                 <div className="text-sm uppercase tracking-wider">Founded in Hyderabad</div>

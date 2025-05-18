@@ -192,7 +192,8 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-dark mb-4">Who We Are</h2>
             <div className="title-underline-center"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Cornerstone IT Solutions is a leading IT services company helping businesses navigate digital transformation with cutting-edge solutions tailored to their unique challenges.
+            Cornerstone IT Solutions is a trusted provider of Talend consulting, data engineering, IT consulting, and staffing services. We specialize in delivering expert Talend solutions, helping businesses with data integration, migration, and quality management.
+            Our mission is to offer reliable and efficient IT solutions tailored to meet the unique needs of our clients. With a focus on Talend expertise and a commitment to excellence, we ensure your data works for you.
             </p>
           </div>
 

@@ -51,12 +51,12 @@ export default function Header() {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'backdrop-blur-md bg-white/80 dark:bg-slate-900/80 shadow-lg py-2' 
-          : 'bg-white/5 backdrop-blur-sm py-4'
+          ? 'backdrop-blur-md bg-white/100 dark:bg-slate-900/80 shadow-lg py-2' 
+          : 'backdrop-blur-md bg-white/100 dark:bg-slate-900/80 shadow-lg py-2'
       }`}
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className={`w-full h-full transition-opacity duration-300 ${isScrolled ? 'opacity-20' : 'opacity-0'}`}>
+        <div className={`w-full h-full transition-opacity duration-300 ${isScrolled ? 'opacity-20' : 'opacity-20'}`}>
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2A1AD8] via-[#7231EC] to-[#B94BFF]"></div>
         </div>
       </div>
